@@ -11,18 +11,22 @@ driver:
 platforms:
   - name: bionic
     pre_build_image: true
-    image: quay.io/paulfantom/molecule-systemd:ubuntu-18.04
+    image: geerlingguy/docker-ubuntu1804-ansible:latest
     docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
     privileged: true
+    command: /sbin/init
+    cgroupns_mode: host
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: xenial
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+  - name: focal
     pre_build_image: true
-    image: quay.io/paulfantom/molecule-systemd:ubuntu-16.04
+    image: geerlingguy/docker-ubuntu2003-ansible:latest
     docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
     privileged: true
+    command: /sbin/init
+    cgroupns_mode: host
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
 provisioner:
   name: ansible
   playbooks:
