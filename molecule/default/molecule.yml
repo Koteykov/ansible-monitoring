@@ -20,13 +20,14 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
   - name: focal
     pre_build_image: true
-    image: geerlingguy/docker-ubuntu2003-ansible:latest
+    image: geerlingguy/docker-ubuntu2004-ansible:latest
     docker_host: "${DOCKER_HOST:-unix://var/run/docker.sock}"
     privileged: true
     command: /sbin/init
     cgroupns_mode: host
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
+
 provisioner:
   name: ansible
   playbooks:
