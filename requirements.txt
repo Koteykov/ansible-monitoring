@@ -1,8 +1,0 @@
-molecule
-docker
-ansible-lint
-pytest-testinfra
-jmespath
-selinux
-passlib
-yamllint
