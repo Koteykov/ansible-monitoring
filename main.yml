@@ -1,0 +1,10 @@
+---
+- name: deploy Victoriametrics
+  hosts: all
+  roles:
+  - victoriametrics
+
+- name: deploy Prometheus
+  hosts: all
+  roles:
+  - prometheus
