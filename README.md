@@ -1,6 +1,9 @@
 # ansible-prometheus
 Основано на [роли prometheus](https://github.com/prometheus-community/ansible/tree/main/roles/prometheus) от prometheus-community и на [роли victoriametrics/single](https://github.com/VictoriaMetrics/ansible-playbooks/tree/master/roles/single) от VictoriaMetrics.
-Включает в себя тестирование molecule.
+
+Включает в себя тестирование molecule. Для Victoriametrics написан свой тест по аналогии с тестом Prometheus.
+
+Для Prometheus настроен таргет 0.0.0.0:8428, где висит Victoriametrics.
 
 ## Установка зависимостей
 ```
